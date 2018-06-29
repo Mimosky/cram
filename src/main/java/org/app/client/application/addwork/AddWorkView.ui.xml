@@ -1,0 +1,29 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b="urn:import:com.github.gwtbootstrap.client.ui">
+
+	<ui:style>
+	.popup {
+		background-color: white;
+		border: 3px double black;
+		padding: 0 15px;
+		z-index: 1010
+	}
+	</ui:style>
+
+	<g:PopupPanel modal="true" autoHideEnabled="true"
+		glassEnabled="true" styleName="{style.popup}">
+		<g:HTMLPanel ui:field="main">
+			<h5>Veuillez Sélectionner Un client</h5>
+			<b:ControlGroup>
+				<!-- <b:ControlLabel>RadioButton</b:ControlLabel> -->
+				<b:Controls>
+				<b:ListBox width="150px" b:id="select01" ui:field="listBox">
+				</b:ListBox>
+
+				</b:Controls>
+			</b:ControlGroup>
+			<b:Button text="Valider" ui:field="okButton" />
+		</g:HTMLPanel>
+	</g:PopupPanel>
+</ui:UiBinder>

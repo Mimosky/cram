@@ -1,0 +1,138 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:d="urn:import:com.github.gwtbootstrap.datepicker.client.ui">
+
+	<ui:style>
+	.pager {
+		margin-bottom: 12px;
+	}
+	</ui:style>
+	<g:HTMLPanel ui:field="main">
+		<b:Row>
+			<b:Column size="4">
+				<b:Heading size="2">Nouvelle absence</b:Heading>
+			</b:Column>
+
+		</b:Row>
+		<b:Row>
+			<b:Column size="4">
+
+				<b:ControlGroup ui:field="congesStartControlGroup">
+					<b:ControlLabel for="congesStart">Date de début</b:ControlLabel>
+					<b:Controls>
+						<d:DateBox ui:field="congesStart" format="dd/mm/yyyy"
+							autoClose="true" />
+						<b:HelpInline ui:field="congesStartHelpInline" />
+					</b:Controls>
+				</b:ControlGroup>
+				<b:ControlGroup ui:field="radioStartControlGroup">
+					<b:Controls>
+						<b:RadioButton name="start" ui:field="startMRadio">Matin</b:RadioButton>
+						<b:RadioButton name="start" ui:field="startARadio">Après-midi</b:RadioButton>
+						<b:HelpInline ui:field="radioStartHelpInline" />
+					</b:Controls>
+				</b:ControlGroup>
+			</b:Column>
+			<b:Column size="4">
+				<b:ControlGroup ui:field="congesEndControlGroup">
+					<b:ControlLabel for="congesEnd">Date de fin</b:ControlLabel>
+					<b:Controls>
+						<d:DateBox ui:field="congesEnd" format="dd/mm/yyyy"
+							autoClose="true" />
+						<b:HelpInline ui:field="congesEndHelpInline" />
+					</b:Controls>
+				</b:ControlGroup>
+				<b:ControlGroup ui:field="radioEndControlGroup">
+					<b:Controls>
+						<b:RadioButton name="end" ui:field="endMRadio">Matin</b:RadioButton>
+						<b:RadioButton name="end" ui:field="endARadio">Après-midi</b:RadioButton>
+						<b:HelpInline ui:field="radioEndHelpInline" />
+					</b:Controls>
+				</b:ControlGroup>
+			</b:Column>
+		</b:Row>
+		<b:Row>
+			<b:Column size="4">
+				<b:ListBox width="150px" b:id="select01" ui:field="listBox">
+					<g:item value="Congé payé">Congé payé</g:item>
+					<g:item value="RTT">RTT</g:item>
+					<g:item value="Maladie">Maladie</g:item>
+					<g:item value="Naissance">Naissance</g:item>
+					<g:item value="Mariage">Mariage</g:item>
+					<g:item value="Congé sans solde">Congé sans solde</g:item>
+					<g:item value="Autres">Autres</g:item>
+				</b:ListBox>
+			</b:Column>
+		</b:Row>
+		<b:Row>
+			<b:Column size="8">
+				<b:FormActions>
+					<b:SubmitButton type="PRIMARY" ui:field="saveButton">Valider</b:SubmitButton>
+				</b:FormActions>
+			</b:Column>
+		</b:Row>
+		<b:Row>
+			<b:Column size="8">
+				<b:Thumbnails>
+					<b:Thumbnail size="8">
+						<b:Caption>
+							<b:Row>
+								<b:Column offset="1" size="2">
+									<g:Label>Congés</g:Label>
+									<g:Label>Pris </g:Label>
+									<g:Label>Solde </g:Label>
+								</b:Column>
+								<b:Column size="2">
+									<g:Label  horizontalAlignment="CENTER"  ui:field="n_1Label"/>
+									<g:Label horizontalAlignment="CENTER" ui:field="pCpLabel" />
+									<g:Label  horizontalAlignment="CENTER"  ui:field="pSoldeLabel" />
+								</b:Column>
+								<b:Column size="2">
+									<g:Label  horizontalAlignment="CENTER"  ui:field="nLabel"/>
+									<g:Label  horizontalAlignment="CENTER"   ui:field="cpLabel" />
+									<g:Label  horizontalAlignment="CENTER"  ui:field="soldeLabel" />
+								</b:Column>
+							</b:Row>
+						</b:Caption>
+					</b:Thumbnail>
+				</b:Thumbnails>
+			</b:Column>
+		</b:Row>
+		<b:Row>
+			<b:Column size="8">
+				<b:Thumbnails>
+					<b:Thumbnail size="8">
+						<b:Caption>
+							<b:Row>
+								<b:Column offset="1" size="2">
+									<g:Label>Année Courante</g:Label>
+									<g:Label>RTT </g:Label>
+									<g:Label>Congés </g:Label>
+								</b:Column>
+								<b:Column size="2">
+									<g:Label horizontalAlignment="CENTER" >Pris </g:Label>
+									<g:Label horizontalAlignment="CENTER" ui:field="rttPris" />
+									<g:Label horizontalAlignment="CENTER" ui:field="congesPris" />
+								</b:Column>
+								<b:Column size="2">
+									<g:Label horizontalAlignment="CENTER" >Solde </g:Label>
+									<g:Label horizontalAlignment="CENTER" ui:field="rttSolde" />
+									<g:Label horizontalAlignment="CENTER" ui:field="conges" />
+								</b:Column>
+							</b:Row>
+						</b:Caption>
+					</b:Thumbnail>
+				</b:Thumbnails>
+			</b:Column>
+		</b:Row>
+		<b:Row>
+			<b:Column size="8">
+				<b:SimplePager display="{congesTable}" location="RIGHT"
+					fastForwardRows="10" styleName="{style.pager}" />
+				<b:CellTable ui:field="congesTable" bordered="true"
+					condensed="true" striped="true" />
+			</b:Column>
+		</b:Row>
+	</g:HTMLPanel>
+</ui:UiBinder>

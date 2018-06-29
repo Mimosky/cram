@@ -1,0 +1,20 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b="urn:import:com.github.gwtbootstrap.client.ui">
+
+	<ui:style>
+	.pager {
+		margin-bottom: 12px;
+	}
+	</ui:style>
+	<g:HTMLPanel ui:field="main">
+		<b:Row>
+			<b:Column size="10">
+				<b:SimplePager display="{congesTable}" location="RIGHT"
+					fastForwardRows="10" styleName="{style.pager}" />
+				<b:CellTable ui:field="congesTable" bordered="true"
+					condensed="true" striped="true" />
+			</b:Column>
+		</b:Row>
+	</g:HTMLPanel>
+</ui:UiBinder>

@@ -1,0 +1,21 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b="urn:import:com.github.gwtbootstrap.client.ui">
+
+	<ui:style>
+	.popup {
+		background-color: white;
+		border: 3px double black;
+		padding: 0 15px;
+		z-index: 1010
+	}
+	</ui:style> 
+	<g:PopupPanel modal="true" autoHideEnabled="true"
+		glassEnabled="true"  styleName="{style.popup}">
+		<g:HTMLPanel ui:field="main">
+			<b:Heading ui:field="label" size="4" />
+			<b:Button text="Annuler" ui:field="cancelButton"/>
+			<b:Button text="OK" ui:field="okButton"/>
+		</g:HTMLPanel>
+	</g:PopupPanel>
+</ui:UiBinder>

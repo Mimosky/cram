@@ -1,0 +1,40 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b="urn:import:com.github.gwtbootstrap.client.ui">
+
+
+	<g:HTMLPanel ui:field="main">
+		<b:Container>
+			<b:Row>
+				<b:Column offset="2" size="8">
+					<b:Hero>
+						<b:Form type="HORIZONTAL">
+							<b:Fieldset ui:field="controlFieldset">
+								<b:Legend> Welcome to Olcya's CRAM</b:Legend>
+								<b:ControlGroup ui:field="usernameGroup">
+									<b:ControlLabel for="username">Username: </b:ControlLabel>
+									<b:Controls>
+										<b:TextBox ui:field="username" placeholder="Email address" />
+										<b:HelpInline ui:field="usernameErrors"></b:HelpInline>
+									</b:Controls>
+								</b:ControlGroup>
+								<b:ControlGroup ui:field="passwordGroup">
+									<b:ControlLabel for="password">Password: </b:ControlLabel>
+									<b:Controls>
+										<b:PasswordTextBox ui:field="password"
+											placeholder="Password" />
+										<b:HelpInline ui:field="passwordErrors"></b:HelpInline>
+									</b:Controls>
+								</b:ControlGroup>
+								<b:Column offset="3" size="1">
+									<!--<b:FormActions> -->
+									<b:Button ui:field="loginButton" type="PRIMARY" text="Connect" />
+									<!-- </b:FormActions> -->
+								</b:Column>
+							</b:Fieldset>
+						</b:Form>
+					</b:Hero>
+				</b:Column>
+			</b:Row>
+		</b:Container>
+	</g:HTMLPanel>
+</ui:UiBinder>

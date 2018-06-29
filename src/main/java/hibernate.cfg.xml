@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+		<!-- Database Connection Settings -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://192.168.60.10:3306/data</property>
+		<property name="connection.username">olcya</property>
+		<property name="connection.password">olcya</property>
+
+		<!-- Connection Pool Size (built-in) -->
+		<property name="connection.pool.size">1</property>
+
+		<property name="javax.persistence.validation.mode">none</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<!-- SQL Dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="hibernate.show_sql">false</property>
+
+		<!-- Drop the existing tables and create new one -->
+		<property name="hbm2ddl.auto">update</property>
+
+
+
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.timeout">300</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+		<property name="hibernate.c3p0.idle_test_period">3000</property>
+
+		<!-- Mention here all the model classes along with their package name -->
+		<mapping class="org.app.shared.User" />
+		<mapping class="org.app.shared.Cram" />
+		<mapping class="org.app.shared.Conges" />
+		<mapping class="org.app.shared.Client" />
+		<mapping class="org.app.shared.Ferier" />
+		<mapping class="org.app.shared.Groupe" />
+	</session-factory>
+</hibernate-configuration>

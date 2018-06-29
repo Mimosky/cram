@@ -1,0 +1,38 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:d="urn:import:com.github.gwtbootstrap.datepicker.client.ui">
+	<g:HTMLPanel>
+		<b:Container>
+			<b:TabPanel tabPosition="left" ui:field="tabPanel">
+				<!-- <b:Tab icon="GOOGLE_PLUS" heading="Typically" active="true"> -->
+				<b:Tab heading="Collaborateurs" active="true">
+					<g:HTMLPanel ui:field="collaborateurPanel" />
+				</b:Tab>
+				<b:Tab heading="Clients">
+					<g:HTMLPanel ui:field="clientPanel" />
+				</b:Tab>
+				<b:Tab heading="Validation Congés">
+					<g:HTMLPanel ui:field="congesPanel" />
+				</b:Tab>
+				<b:Tab heading="Initialisation Congés">
+					<g:HTMLPanel ui:field="initCongesPanel" />
+				</b:Tab>
+				<b:Tab heading="Fériés">
+					<g:HTMLPanel ui:field="ferierPanel" />
+				</b:Tab>
+				<b:Tab heading="Groupes">
+					<g:HTMLPanel ui:field="groupPanel" />
+				</b:Tab>
+				<b:Tab heading="Affichage Congés" ui:field="tabCalendar">
+					<g:HTMLPanel ui:field="showCongesPanel" />
+				</b:Tab>
+				<b:Tab heading="Imprimer Cram" ui:field="tabCram">
+					<g:HTMLPanel ui:field="showCramPanel" />
+				</b:Tab>
+				<b:Tab heading="Modifier Cram" ui:field="tabAlterCram">
+					<g:HTMLPanel ui:field="alterCramPanel" />
+				</b:Tab>
+			</b:TabPanel>
+		</b:Container>
+	</g:HTMLPanel>
+</ui:UiBinder>

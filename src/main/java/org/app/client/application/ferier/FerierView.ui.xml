@@ -1,0 +1,48 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:d="urn:import:com.github.gwtbootstrap.datepicker.client.ui">
+	<ui:style>
+	.pager {
+		margin-bottom: 12px;
+	}
+	</ui:style>
+
+	<g:HTMLPanel ui:field="main">
+		<b:Row>
+			<b:Column size="8">
+				<b:Heading size="2">Jours fériés et RTT imposés</b:Heading>
+			</b:Column>
+		</b:Row>
+		<b:Row>
+			<b:Column size="4">
+				<b:ControlGroup ui:field="ferierControlGroup">
+					<b:ControlLabel for="ferier">Date</b:ControlLabel>
+					<b:Controls>
+						<d:DateBox ui:field="ferier" format="dd/mm/yyyy"
+							autoClose="true" />
+						<b:HelpInline ui:field="ferierHelpInline" />
+					</b:Controls>
+				</b:ControlGroup>
+			</b:Column>
+			<b:Column size="4">
+			<b:ControlLabel for="ferier">Type</b:ControlLabel>
+				<b:ListBox width="150px" b:id="select01" ui:field="listBox">
+					<g:item value="Férié">Férié</g:item>
+					<g:item value="RTT">RTT</g:item>
+				</b:ListBox>
+			</b:Column>
+		</b:Row>
+		<b:FormActions>
+			<b:Button type="PRIMARY" ui:field="addFerier">Ajouter</b:Button>
+		</b:FormActions>
+		<b:Row>
+			<b:Column size="8">
+				<b:SimplePager display="{ferierTable}" location="RIGHT"
+					fastForwardRows="10" styleName="{style.pager}" />
+				<b:CellTable ui:field="ferierTable" bordered="true"
+					condensed="true" striped="true" />
+			</b:Column>
+		</b:Row>
+	</g:HTMLPanel>
+</ui:UiBinder>

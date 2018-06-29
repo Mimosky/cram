@@ -1,0 +1,48 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:d="urn:import:com.github.gwtbootstrap.datepicker.client.ui"
+	xmlns:t="urn:import:org.gwtbootstrap3.client.ui.gwt" xmlns:f="urn:import:org.gwtbootstrap3.extras.fullcalendar.client.ui">
+
+	<ui:style>
+	.pager {
+		margin-bottom: 12px;
+	}
+	</ui:style>
+
+	<g:HTMLPanel>
+		<b:Container>
+			<b:TabPanel tabPosition="left" ui:field="tabPanel">
+				<!-- <b:Tab icon="GOOGLE_PLUS" heading="Typically" active="true"> -->
+				<!-- <b:Tab heading="Home" active="true"> <b:Legend> Espace salarié </b:Legend> 
+					<b:Row> <b:Column offset="1" size="5"> <b:Hero> <b:Heading ui:field="userName" 
+					size="4" /> <b:Paragraph>Adresse</b:Paragraph> <b:Paragraph>RTT N°Jours congés</b:Paragraph> 
+					</b:Hero> </b:Column> <b:Column offset="1" size="5"> <b:Hero> <b:Heading 
+					size="4">Actualité de l'entreprise</b:Heading> <b:Paragraph>Fil de l'actualité</b:Paragraph> 
+					</b:Hero> </b:Column> </b:Row> </b:Tab> -->
+				<b:Tab ui:field="cramTab" heading="Cram" active="true">
+					<b:Column size="10">
+						<g:HTMLPanel ui:field="calendarPanel" />
+						<b:FormActions>
+
+							<b:ControlGroup ui:field="notifyGroup">
+								<b:Controls>
+									<b:Button type="INFO" ui:field="saveCram">Sauvegarder</b:Button>
+									<b:Column size="4" />
+									<b:Button type="PRIMARY" ui:field="notifyCram">Envoyer</b:Button>
+									<b:HelpInline ui:field="notifyErrors"></b:HelpInline>
+									<b:Column size="2" />
+								</b:Controls>
+							</b:ControlGroup>
+						</b:FormActions>
+					</b:Column>
+				</b:Tab>
+				<b:Tab ui:field="congesTab" heading="Conges">
+					<g:HTMLPanel ui:field="congesPanel" />
+				</b:Tab>
+				<b:Tab ui:field="showCongesTab" heading="Groupe">
+					<g:HTMLPanel ui:field="showCongesPanel" />
+				</b:Tab>
+			</b:TabPanel>
+		</b:Container>
+	</g:HTMLPanel>
+</ui:UiBinder>

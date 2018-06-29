@@ -1,0 +1,80 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:d="urn:import:com.github.gwtbootstrap.datepicker.client.ui">
+
+
+	<ui:style>
+	.pager {
+		margin-bottom: 12px;
+	}
+	</ui:style>
+	<g:HTMLPanel ui:field="main">
+
+<b:Row>
+		<b:Column size="3" offset="7">
+			<b:Button ui:field="showButton" text="Ajouter un client" />
+		</b:Column>
+</b:Row>
+<b:Row>
+		<b:Column size="10">
+			<b:SimplePager display="{table}" location="RIGHT"
+				fastForwardRows="10" styleName="{style.pager}" />
+
+			<b:CellTable ui:field="table" bordered="true" condensed="true"
+				striped="true" />
+		</b:Column>
+
+</b:Row>
+
+		<b:Modal ui:field="modal" title="Ajouter un client" backdrop="STATIC"
+			keyboard="true" animation="true">
+			<b:Legend>
+				<small>Les informations en* sont obligatoires</small>
+			</b:Legend>
+			<b:FluidRow>
+				<b:Column size="6">
+					<b:Form type="HORIZONTAL">
+						<b:Fieldset>
+							<b:ControlGroup ui:field="clientNameControlGroup">
+								<b:ControlLabel for="nom">Nom</b:ControlLabel>
+								<b:Controls>
+									<b:TextBox b:id="Nom" ui:field="clientName"></b:TextBox>
+									<b:HelpInline ui:field="clientNameHelpInline" />
+								</b:Controls>
+							</b:ControlGroup>
+							<b:ControlGroup ui:field="addressControlGroup">
+								<b:ControlLabel for="nom">Adresse</b:ControlLabel>
+								<b:Controls>
+									<b:TextBox b:id="Nom" ui:field="address"></b:TextBox>
+									<b:HelpInline ui:field="addressHelpInline" />
+								</b:Controls>
+							</b:ControlGroup>
+							<b:ControlGroup ui:field="emailControlGroup">
+								<b:ControlLabel for="email">Email</b:ControlLabel>
+								<b:Controls>
+									<b:TextBox b:id="email" ui:field="email"
+										ui:placeholder="adresse mail"></b:TextBox>
+									<b:HelpInline ui:field="emailHelpInline" />
+								</b:Controls>
+							</b:ControlGroup>
+							<b:ControlGroup>
+								<b:ControlLabel for="datebox">Date d'enregistrement</b:ControlLabel>
+								<b:Controls>
+									<d:DateBox ui:field="dateBox" format="dd/mm/yyyy"
+										autoClose="true" />
+								</b:Controls>
+							</b:ControlGroup>
+						</b:Fieldset>
+					</b:Form>
+				</b:Column>
+
+			</b:FluidRow>
+
+
+			<b:ModalFooter>
+				<b:Button icon="FILE" type="PRIMARY" ui:field="saveButton">Enregistrer</b:Button>
+			</b:ModalFooter>
+		</b:Modal>
+	</g:HTMLPanel>
+</ui:UiBinder>

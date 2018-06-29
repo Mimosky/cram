@@ -1,0 +1,230 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:d="urn:import:com.github.gwtbootstrap.datepicker.client.ui"
+	xmlns:i='urn:import:com.github.gwtbootstrap.client.ui.incubator'>
+
+
+	<ui:style>
+	.pager {
+		margin-bottom: 12px;
+	}
+	</ui:style>
+
+	<g:HTMLPanel ui:field="main">
+
+<b:Row>
+		<b:Column size="3" offset="7">
+			<b:Button ui:field="showButton" text="Ajouter un collaborateur" />
+		</b:Column>
+</b:Row>
+
+	
+	
+		<b:Row>
+	<b:Column offset="1" size="4">
+		<g:HTMLPanel>
+	<h4>Comptes actifs</h4>
+	</g:HTMLPanel>
+	</b:Column>
+	</b:Row>
+<b:Row>
+		<b:Column size="10">
+			<b:SimplePager display="{table}" location="RIGHT"
+				fastForwardRows="10" styleName="{style.pager}" />
+
+			<b:CellTable ui:field="table" bordered="true" condensed="true"
+				striped="true" />
+		</b:Column>
+</b:Row>
+		<b:Row>
+	<b:Column offset="1" size="4">
+		<g:HTMLPanel>
+	<h4>Comptes désactivés</h4>
+	</g:HTMLPanel>
+	</b:Column>
+	</b:Row>
+
+<b:Row>
+		<b:Column size="10">
+			<b:SimplePager display="{tableDeleted}" location="RIGHT"
+				fastForwardRows="10" styleName="{style.pager}" />
+
+			<b:CellTable ui:field="tableDeleted" bordered="true" condensed="true"
+				striped="true" />
+		</b:Column>
+</b:Row>
+
+		<b:Modal ui:field="modal" title="Ajouter un collaborateur"
+			backdrop="STATIC" keyboard="true" animation="true">
+
+			<b:Legend>
+				<small>Les informations en * sont obligatoires</small>
+			</b:Legend>
+			<b:FluidRow>
+				<b:Column size="6">
+					<b:Form type="HORIZONTAL">
+						<b:Fieldset>
+							<b:ControlGroup ui:field="userNameControlGroup">
+								<b:ControlLabel for="prenom">
+									<font color="red">*</font>
+									Prénom
+								</b:ControlLabel>
+								<b:Controls>
+									<b:TextBox b:id="prenom" ui:field="userName"
+										placeholder="entrer le nom de l'utilisateur" />
+									<b:HelpInline ui:field="userNameHelpInline" />
+								</b:Controls>
+							</b:ControlGroup>
+							<b:ControlGroup ui:field="userSurNameControlGroup">
+								<b:ControlLabel for="nom">Nom</b:ControlLabel>
+								<b:Controls>
+									<b:TextBox b:id="prenom" ui:field="userSurname"></b:TextBox>
+									<b:HelpInline ui:field="userSurnameHelpInline" />
+								</b:Controls>
+							</b:ControlGroup>
+							<b:ControlGroup ui:field="emailControlGroup">
+								<b:ControlLabel for="email">Email</b:ControlLabel>
+								<b:Controls>
+									<b:TextBox b:id="email" ui:field="email"
+										ui:placeholder="adresse mail"></b:TextBox>
+									<b:HelpInline ui:field="emailHelpInline" />
+								</b:Controls>
+							</b:ControlGroup>
+							<b:ControlGroup ui:field="passwordGroup">
+								<b:ControlLabel for="password">Mot de passe</b:ControlLabel>
+								<b:Controls>
+									<b:PasswordTextBox b:id="password" ui:field="password"
+										placeholder="" />
+									<b:HelpInline ui:field="passwordHelpInline"></b:HelpInline>
+								</b:Controls>
+							</b:ControlGroup>
+							<b:ControlGroup>
+								<b:ControlLabel for="datebox">Date d'entrée</b:ControlLabel>
+								<b:Controls>
+									<d:DateBox ui:field="dateBox" format="dd/mm/yyyy"
+										autoClose="true" />
+								</b:Controls>
+							</b:ControlGroup>
+							<b:ControlGroup>
+								<b:ControlLabel for="profileListBox">Profile</b:ControlLabel>
+								<b:Controls>
+									<b:ListBox width="150px" b:id="select01" ui:field="profileListBox">
+										<g:item value="admin">Admin</g:item>
+										<g:item value="manager">Manager</g:item>
+										<g:item value="administratif	">Administratif</g:item>
+										<g:item value="collaborateur">Collaborateur</g:item>
+									</b:ListBox>
+								</b:Controls>
+							</b:ControlGroup>
+							<b:ControlGroup>
+								<b:ControlLabel for="contratListBox">Type de contrat</b:ControlLabel>
+								<b:Controls>
+									<b:ListBox width="100px" b:id="select01" ui:field="contratListBox">
+										<g:item value="217">217</g:item>
+										<g:item value="219">219</g:item>
+									</b:ListBox>
+								</b:Controls>
+							</b:ControlGroup>
+						</b:Fieldset>
+					</b:Form>
+				</b:Column>
+
+			</b:FluidRow>
+			<b:ControlGroup>
+			<b:Controls>
+			<i:PickList ui:field="pickList" selectedLabelText="Clients affectés"
+				candidateLabelText="Liste des clients" />
+				</b:Controls>
+				</b:ControlGroup>
+			<b:ModalFooter>
+				<b:Button icon="FILE" type="PRIMARY" ui:field="saveButton">Enregistrer</b:Button>
+			</b:ModalFooter>
+		</b:Modal>
+		<b:Modal ui:field="modifyModal" title="Modifier" backdrop="STATIC"
+			keyboard="true" animation="true">
+
+			<b:FluidRow>
+				<b:Column size="6">
+					<b:Form type="HORIZONTAL">
+						<b:Fieldset>
+							<b:ControlGroup>
+									<b:ControlLabel for="userNameModify">Prénom</b:ControlLabel>
+									<b:Controls>
+									<b:TextBox b:id="userNameModify" ui:field="userNameModify"
+										placeholder="entrer le nom de l'utilisateur" />
+								</b:Controls>
+							</b:ControlGroup>
+							<b:ControlGroup>
+									<b:ControlLabel for="userSurnameModify">Nom</b:ControlLabel>
+									<b:Controls>
+									<b:TextBox b:id="userSurnameModify" ui:field="userSurnameModify"></b:TextBox>
+								</b:Controls>
+							</b:ControlGroup>
+							<b:ControlGroup>
+									<b:ControlLabel for="emailModify">Email</b:ControlLabel>
+									<b:Controls>
+									<b:TextBox b:id="emailModify" ui:field="emailModify"
+										ui:placeholder="adresse mail"></b:TextBox>
+								</b:Controls>
+							</b:ControlGroup>
+							<b:ControlGroup>
+									<b:ControlLabel for="passwordModify">Mot de passe</b:ControlLabel>
+									<b:Controls>
+									<b:PasswordTextBox b:id="passwordModify"
+										ui:field="passwordModify" />
+								</b:Controls>
+							</b:ControlGroup>
+							<b:ControlGroup>
+									<b:ControlLabel for="dateBoxModify">Date d'entrée</b:ControlLabel>
+									<b:Controls>
+									<d:DateBox b:id="dateBoxModify" ui:field="dateBoxModify"
+										format="dd/mm/yyyy" autoClose="true" />
+								</b:Controls>
+							</b:ControlGroup>
+							<b:ControlGroup>
+								<b:ControlLabel for="profileListBoxModify">Profile</b:ControlLabel>
+								<b:Controls>
+									<b:ListBox width="150px" b:id="select01" ui:field="profileListBoxModify">
+										<g:item value="admin">Admin</g:item>
+										<g:item value="manager">Manager</g:item>
+										<g:item value="administratif	">Administratif</g:item>
+										<g:item value="collaborateur">Collaborateur</g:item>
+									</b:ListBox>
+								</b:Controls>
+							</b:ControlGroup>
+							<b:ControlGroup>
+								<b:ControlLabel for="contratListBoxModify">Type de Contrat</b:ControlLabel>
+								<b:Controls>
+									<b:ListBox width="100px" b:id="select01" ui:field="contratListBoxModify">
+										<g:item value="217">217</g:item>
+										<g:item value="219">219</g:item>
+									</b:ListBox>
+								</b:Controls>
+							</b:ControlGroup>
+							<b:ControlGroup>
+								<b:ControlLabel for="statusListBoxModify">Statut</b:ControlLabel>
+								<b:Controls>
+									<b:ListBox width="150px" b:id="select01" ui:field="statusListBoxModify">
+										<g:item value="enabled">Activé</g:item>
+										<g:item value="disabled">Désactivé</g:item>
+									</b:ListBox>
+								</b:Controls>
+							</b:ControlGroup>
+						</b:Fieldset>
+					</b:Form>
+				</b:Column>
+
+			</b:FluidRow>
+			<b:ControlGroup>
+			<b:Controls>
+			<i:PickList ui:field="pickListModify" selectedLabelText="Clients affectés"
+				candidateLabelText="Liste des clients" />
+				</b:Controls>
+				</b:ControlGroup>
+			<b:ModalFooter>
+				<b:Button icon="FILE" type="PRIMARY" ui:field="modifyButton">Modifier</b:Button>
+			</b:ModalFooter>
+		</b:Modal>
+	</g:HTMLPanel>
+</ui:UiBinder>

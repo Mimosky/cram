@@ -1,0 +1,64 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:d="urn:import:com.github.gwtbootstrap.datepicker.client.ui"
+	xmlns:t="urn:import:org.gwtbootstrap3.client.ui.gwt" xmlns:f="urn:import:org.gwtbootstrap3.extras.fullcalendar.client.ui">
+
+	<ui:style>
+	.pager {
+		margin-bottom: 12px;
+	}
+	</ui:style>
+
+	<g:HTMLPanel>
+		<b:Row>
+			<b:Column size="2">
+				<b:ControlGroup ui:field="userBoxControl">
+					<b:ControlLabel for="usersBox">Utilisateurs</b:ControlLabel>
+					<b:Controls>
+						<b:ListBox width="180px" ui:field="usersBox" />
+						<b:HelpInline ui:field="userBoxHelpInline" />
+					</b:Controls>
+				</b:ControlGroup>
+			</b:Column>
+			<b:Column size="2">
+				<b:ControlGroup ui:field="clientBoxControl">
+					<b:ControlLabel for="clientBox">Clients</b:ControlLabel>
+					<b:Controls>
+						<b:ListBox width="100px" ui:field="clientBox" />
+						<b:HelpInline ui:field="clientBoxHelpInline" />
+					</b:Controls>
+				</b:ControlGroup>
+			</b:Column>
+			<b:Column size="2">
+				<b:ControlGroup ui:field="monthBoxControl">
+					<b:ControlLabel for="monthBox">Mois</b:ControlLabel>
+					<b:Controls>
+						<b:ListBox width="100px" ui:field="monthBox" />
+						<b:HelpInline ui:field="monthBoxHelpInline" />
+					</b:Controls>
+				</b:ControlGroup>
+			</b:Column>
+			<b:Column size="2">
+				<b:ControlGroup ui:field="yearBoxControl">
+					<b:ControlLabel for="yearBox">Année</b:ControlLabel>
+					<b:Controls>
+						<b:ListBox width="100px" ui:field="yearBox" />
+						<b:HelpInline ui:field="yearBoxHelpInline" />
+					</b:Controls>
+				</b:ControlGroup>
+			</b:Column>
+			<b:Column size="2">
+				<b:Button ui:field="display">Afficher</b:Button>
+			</b:Column>
+		</b:Row>
+
+		<b:Column size="10">
+			<g:HTMLPanel ui:field="calendarPanel" />
+			<b:FormActions>
+				<b:Button type="PRIMARY" ui:field="saveCram">Generate</b:Button>
+			</b:FormActions>
+		</b:Column>
+
+
+	</g:HTMLPanel>
+</ui:UiBinder>
